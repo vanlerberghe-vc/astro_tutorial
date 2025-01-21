@@ -1,0 +1,34 @@
+---
+import NavigationLink from "./NavigationLink.astro"
+
+interface NavigationLink {
+    url: string;
+    label: string;
+}
+
+const navigationData = [
+    {
+        url: "/",
+        label: "Home"
+    },
+    {
+        url: "/about",
+        label: "About"
+    },
+    {
+        url: "/blog",
+        label: "Blog"
+    },
+    {
+        url: "/tags",
+        label: "Tags"
+    }
+]
+---
+
+<div class="nav-links"></>
+    
+    {
+        navigationData.map((element: NavigationLink) => <NavigationLink url={element.url} label={element.label}/>)
+    }
+</div>
